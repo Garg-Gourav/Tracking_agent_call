@@ -1,0 +1,33 @@
+import subprocess
+from twilio.rest import Client
+import time
+# Twilio credentials
+account_sid = 'AC03bb29d8f8f602835c08fd5fb72fc77c'  # Replace with your Twilio Account SID
+auth_token = '54956df7a973d80a9272faaf36ab9a50'    # Replace with your Twilio Auth Token
+twilio_phone_number = '+15085009079'  # Replace with your Twilio phone number
+
+# Initialize Twilio Client
+client = Client(account_sid, auth_token)
+
+# Agent details (place with the specific number)
+agent_name = 'gourav Garg'
+agent_number = '+919650295710'  # Replace with the agent's phone number (include country code)
+service_location = 'bathinda'
+time_slot = '10:00 PM'
+
+
+# Function to make a call and ask for agent confirmation
+def make_automated_call(agent_name, agent_number, service_location, time_slot):
+    twiml = f'<Response><Say>Hello {agent_name}, you are scheduled for a service at {service_location} at {time_slot}. Please press 1 if you are at the location. Press 2 if you are not.</Say><Gather action="https://2d5e-103-253-150-1.ngrok-free.app/gather" numDigits="1"/></Response>'
+
+    call = client.calls.create(
+        to=agent_number,
+        from_=twilio_phone_number,
+        twiml=twiml
+    )
+    print(f"Call placed to {agent_name} at {agent_number} for service at {service_location} at {time_slot}")
+
+    return call.sid
+
+# Make a call to the agent
+make_automated_call(agent_name, agent_number, service_location, time_slot)
