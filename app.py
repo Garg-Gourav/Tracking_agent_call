@@ -2,9 +2,9 @@ import subprocess
 from twilio.rest import Client
 import time
 # Twilio credentials
-account_sid = 'AC03bb29d8f8f602835c08fd5fb72fc77c'  # Replace with your Twilio Account SID
-auth_token = '54956df7a973d80a9272faaf36ab9a50'    # Replace with your Twilio Auth Token
-twilio_phone_number = '+15085009079'  # Replace with your Twilio phone number
+account_sid = '***'  # Replace with your Twilio Account SID
+auth_token = '***'    # Replace with your Twilio Auth Token
+twilio_phone_number = '***'  # Replace with your Twilio phone number
 
 # Initialize Twilio Client
 client = Client(account_sid, auth_token)
