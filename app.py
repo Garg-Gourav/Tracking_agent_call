@@ -10,9 +10,9 @@ twilio_phone_number = '***'  # Replace with your Twilio phone number
 client = Client(account_sid, auth_token)
 
 # Agent details (place with the specific number)
-agent_name = 'gourav Garg'
-agent_number = '+919650295710'  # Replace with the agent's phone number (include country code)
-service_location = 'bathinda'
+agent_name = 'g*******g'
+agent_number = '+91******0'  # Replace with the agent's phone number (include country code)
+service_location = '***a'
 time_slot = '10:00 PM'
 
 
